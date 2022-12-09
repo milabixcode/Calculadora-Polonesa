@@ -26,52 +26,24 @@ public class Operacoes {
             caractere = expressao.charAt(i);
             if (Character.isDigit(caractere))
                 // TODO: add support for imaginary part
+                // 5 4 3i -
                 pilha.push(new ComplexNumber(Character.digit(caractere, 10), 0));
             else if (caractere == '+') {
-                num1 = pilha.pop();
                 num2 = pilha.pop();
+                num1 = pilha.pop();
                 pilha.push(num1.add(num2));
             } else if (caractere == '*') {
-                num1 = pilha.pop();
                 num2 = pilha.pop();
+                num1 = pilha.pop();
                 pilha.push(num1.mul(num2));
             } else if (caractere == '-') {
-                num1 = pilha.pop();
                 num2 = pilha.pop();
+                num1 = pilha.pop();
                 pilha.push(num1.sub(num2));
             } else if (caractere == '/') {
-                num1 = pilha.pop();
                 num2 = pilha.pop();
+                num1 = pilha.pop();
                 pilha.push(num1.div(num2));
-            } else if (caractere == '^') {
-                // num1 = pilha.pop();
-                // num2 = pilha.pop();
-
-                // if(num2 > 0){
-                // pilha.push((int) Math.pow(num2,1.00/num1));
-                // }
-                // else if(num2 < 0) {
-                // if(num2 % num1 == 0){
-                // num2 = (int) num2 * (-1);
-                // int a = (int) Math.pow(num2, 1/num1);
-                // int b = 1;
-                // ComplexNumber number = new ComplexNumber(a, b);
-                // number.getReal();
-                // number.getImaginaria();
-                // number.toString();
-                // break;
-                // }
-                // else if(num2 % num1 != 0) {
-                // num2 = (int) num2 * (-1);
-                // int a = (int) Math.pow(num2, 1/num1);
-                // int b = (int)num2 % (int)num1;
-                // ComplexNumber number = new ComplexNumber(a, b);
-                // number.getReal();
-                // number.getImaginaria();
-                // number.toString();
-                // break;
-                // }
-                // }
             }
         }
         ComplexNumber resultado = pilha.pop();

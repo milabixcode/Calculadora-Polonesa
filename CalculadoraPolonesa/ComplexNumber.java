@@ -62,21 +62,18 @@ public class ComplexNumber {
         return output;
     }
 
-    public ComplexNumber div(double a, double b, double c, double d) {
-        double real = (a*c - b*d)/(c*c - d*d); 
-        double imaginaria = (-a*d+ c*b)/(c*c - d*d);
-        return new ComplexNumber(real,imaginaria);
+    private static ComplexNumber div(double a, double b, double c, double d) {
+        double real = (a * c - b * d) / (c * c - d * d);
+        double imaginaria = (-a * d + c * b) / (c * c - d * d);
+        return new ComplexNumber(real, imaginaria);
     }
 
     public ComplexNumber div(ComplexNumber other) {
-        if (other.real == 0.0 || other.imaginaria == 0.0) {
+        if (other.real == 0.0 && other.imaginaria == 0.0) {
             throw new ArithmeticException("division by zero");
         }
 
-        ComplexNumber output = new ComplexNumber();
-        output.real = this.real / other.real;
-        output.imaginaria = this.imaginaria / other.imaginaria;
-
+        ComplexNumber output = div(this.real, this.imaginaria, other.real, other.imaginaria);
         return output;
     }
 
