@@ -79,11 +79,6 @@ public class ComplexNumber {
 
     public ComplexNumber raiz(ComplexNumber other) {
         throw new RuntimeException("not implemented");
-        // ComplexNumber output = new ComplexNumber();
-        // output.real = this.real + other.real;
-        // output.imaginaria = this.imaginaria + other.imaginaria;
-
-        // return output;
     }
 
 }

@@ -18,32 +18,34 @@ public class Operacoes {
 
     public static ComplexNumber calcular(String expressao) {
         Pilha pilha = new Pilha();
+        Leitor leitor = new Leitor(expressao);
 
         ComplexNumber num1, num2;
-        char caractere;
 
-        for (int i = 0; i < expressao.length(); i++) {
-            caractere = expressao.charAt(i);
-            if (Character.isDigit(caractere))
-                // TODO: add support for imaginary part
-                // 5 4 3i -
-                pilha.push(new ComplexNumber(Character.digit(caractere, 10), 0));
-            else if (caractere == '+') {
-                num2 = pilha.pop();
-                num1 = pilha.pop();
-                pilha.push(num1.add(num2));
-            } else if (caractere == '*') {
-                num2 = pilha.pop();
-                num1 = pilha.pop();
-                pilha.push(num1.mul(num2));
-            } else if (caractere == '-') {
-                num2 = pilha.pop();
-                num1 = pilha.pop();
-                pilha.push(num1.sub(num2));
-            } else if (caractere == '/') {
-                num2 = pilha.pop();
-                num1 = pilha.pop();
-                pilha.push(num1.div(num2));
+        while (!leitor.finished()) {
+
+            try {
+                pilha.push(leitor.proxNumero());
+            } catch (NotANumberException e) {
+                String operador = leitor.proxOperador();
+
+                if (operador.equals("+")) {
+                    num2 = pilha.pop();
+                    num1 = pilha.pop();
+                    pilha.push(num1.add(num2));
+                } else if (operador.equals("*")) {
+                    num2 = pilha.pop();
+                    num1 = pilha.pop();
+                    pilha.push(num1.mul(num2));
+                } else if (operador.equals("-")) {
+                    num2 = pilha.pop();
+                    num1 = pilha.pop();
+                    pilha.push(num1.sub(num2));
+                } else if (operador.equals("/")) {
+                    num2 = pilha.pop();
+                    num1 = pilha.pop();
+                    pilha.push(num1.div(num2));
+                }
             }
         }
         ComplexNumber resultado = pilha.pop();
