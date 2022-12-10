@@ -2,7 +2,7 @@ package CalculadoraPolonesa;
 
 import java.io.*;
 
-public class Operacoes {
+public class Operations {
     public static void main(String[] args) throws IOException {
 
         System.out.println("Calculadora com notação Polonesa");

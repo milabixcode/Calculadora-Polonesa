@@ -37,7 +37,7 @@ public class Tests {
     }
 
     private static void check(String input, String expected) {
-        ComplexNumber actual = Operacoes.calcular(input);
+        ComplexNumber actual = Operations.calcular(input);
 
         System.out.println("check: [" + input + "]: " + actual.toString());
 
