@@ -5,6 +5,13 @@ import java.io.*;
 public class Operations {
     public static void main(String[] args) throws IOException {
 
+        // Roda a minha calculadora
+        Interface calculator = new Interface();
+
+        // Mostra o nome da classe e em que pasta ela está
+        String nome = calculator.getClass().getName();
+        System.out.println(nome);
+
         System.out.println("Calculadora com notação Polonesa");
         System.out.println("------ Exemplo de uso: -------\n   4 7 + 1 * 5 8 * + ");
         System.out.print("Informe sua expressão:\n   ");
@@ -28,22 +35,20 @@ public class Operations {
                 pilha.push(leitor.proxNumero());
             } catch (NotANumberException e) {
                 String operador = leitor.proxOperador();
+                num2 = pilha.pop();
+                num1 = pilha.pop();
 
                 if (operador.equals("+")) {
-                    num2 = pilha.pop();
-                    num1 = pilha.pop();
+                    
                     pilha.push(num1.add(num2));
                 } else if (operador.equals("*")) {
-                    num2 = pilha.pop();
-                    num1 = pilha.pop();
+                    
                     pilha.push(num1.mul(num2));
                 } else if (operador.equals("-")) {
-                    num2 = pilha.pop();
-                    num1 = pilha.pop();
+                    
                     pilha.push(num1.sub(num2));
                 } else if (operador.equals("/")) {
-                    num2 = pilha.pop();
-                    num1 = pilha.pop();
+                    
                     pilha.push(num1.div(num2));
                 }
             }
