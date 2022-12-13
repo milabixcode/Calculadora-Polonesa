@@ -69,6 +69,14 @@ class Leitor {
     }
 }
 
+/*
+Apresenta o padrão de TDD - Test driven development 
+foram elaborados testes unitários da classe para garantir comportamento o comportamento determinístico
+assim, qualquer alteração na classe que introduza uma mudança na forma de obtenção do resultado acarretará no
+lançamento de exceções pelo teste. Isso garante a manutenibildiade do códgigo, pois qualquer desenvolvedor que posteriormente vier a dar
+manutenção no código correrá mesnos riscos de introduzir efeitos colaterais
+*/
+
 class LeitorTestes {
     public static void testes() {
         // Reais: 123
