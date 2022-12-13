@@ -34,27 +34,32 @@ public class Operations {
             try {
                 pilha.push(leitor.proxNumero());
             } catch (NotANumberException e) {
-                String operador = leitor.proxOperador();
+                String caracter = leitor.proxOperador();
                 num2 = pilha.pop();
                 num1 = pilha.pop();
 
-                if (operador.equals("+")) {
-                    
-                    pilha.push(num1.add(num2));
-                } else if (operador.equals("*")) {
-                    
-                    pilha.push(num1.mul(num2));
-                } else if (operador.equals("-")) {
-                    
-                    pilha.push(num1.sub(num2));
-                } else if (operador.equals("/")) {
-                    
-                    pilha.push(num1.div(num2));
-                }
+                Operador operador = buildOperador(caracter);
+                ComplexNumber resultado = operador.operar(num1, num2);
+                pilha.push(resultado);
             }
         }
         ComplexNumber resultado = pilha.pop();
         return resultado;
+    }
+
+    private static Operador buildOperador(String caracter) {
+        switch (caracter) {
+            case "+":
+                return new Soma();
+            case "-":
+                return new Subtracao();
+            case "*":
+                return new Multiplicacao();
+            case "/":
+                return new Divisao();
+            default:
+                throw new IllegalArgumentException("Operador não esperado");
+        }
     }
 
     public static String lerString() throws IOException {

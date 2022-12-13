@@ -39,46 +39,18 @@ public class ComplexNumber {
     }
 
     public ComplexNumber add(ComplexNumber other) {
-        ComplexNumber output = new ComplexNumber();
-        output.real = this.real + other.real;
-        output.imaginaria = this.imaginaria + other.imaginaria;
-
-        return output;
+        return new Soma().operar(this, other);
     }
 
     public ComplexNumber sub(ComplexNumber other) {
-        ComplexNumber output = new ComplexNumber();
-        output.real = this.real - other.real;
-        output.imaginaria = this.imaginaria - other.imaginaria;
-
-        return output;
+        return new Subtracao().operar(this, other);
     }
 
     public ComplexNumber mul(ComplexNumber other) {
-        ComplexNumber output = new ComplexNumber();
-        output.real = this.real * other.real;
-        output.imaginaria = this.imaginaria * other.imaginaria;
-
-        return output;
-    }
-
-    private static ComplexNumber div(double a, double b, double c, double d) {
-        double real = (a * c - b * d) / (c * c - d * d);
-        double imaginaria = (-a * d + c * b) / (c * c - d * d);
-        return new ComplexNumber(real, imaginaria);
+        return new Multiplicacao().operar(this, other);
     }
 
     public ComplexNumber div(ComplexNumber other) {
-        if (other.real == 0.0 && other.imaginaria == 0.0) {
-            throw new ArithmeticException("division by zero");
-        }
-
-        ComplexNumber output = div(this.real, this.imaginaria, other.real, other.imaginaria);
-        return output;
+        return new Divisao().operar(this, other);
     }
-
-    public ComplexNumber raiz(ComplexNumber other) {
-        throw new RuntimeException("not implemented");
-    }
-
 }

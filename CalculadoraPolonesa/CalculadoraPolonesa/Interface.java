@@ -20,7 +20,7 @@ public class Interface extends Operations {
         expression.setEditable(false);
 
         // Guarda as expressoes calculadas anteriormente
-        JLabel labelPreviousExpression = new JLabel(" Histórico  =  ");
+        JLabel labelPreviousExpression = new JLabel(" Memória  =  ");
         JTextField previousExpression = new JTextField(40);
         previousExpression.setEditable(false);
 
@@ -43,7 +43,7 @@ public class Interface extends Operations {
         JButton botaoMultiplica = new JButton ("*");
         JButton botaoMemoria = new JButton ("<-");
         JButton botaoDivide = new JButton ("/");
-        JButton botaoIgual = new JButton ("=");
+        JButton botaoCalcula = new JButton ("=");
 
         JLabel espacosDeSeparacao[] = new JLabel[11];
         for (int i = 0; i < 11 ;i++)
@@ -86,6 +86,8 @@ public class Interface extends Operations {
                     expression.setText(expression.getText() + " ");
                 else if (e.getActionCommand() == "C")
                     expression.setText("");
+                else if(e.getActionCommand().equals("<-"))
+                    expression.setText(previousExpression.getText());
                 else
                     expression.setText(expression.getText() + e.getActionCommand());
             }
@@ -93,14 +95,13 @@ public class Interface extends Operations {
         class ClickCalcula implements ActionListener{
             public void actionPerformed(ActionEvent e)
             {
-                // Defino o termo q vai ficar no historico
-                previousExpression.setText(previousExpression.getText() + expression.getText());
+                // Defino o termo q vai ficar no historico;
                 try{
-                    //expression.setText(calcular(expression.getText()));
+                    expression.setText(calcular(expression.getText()).toString());
                 } catch(Exception exception){
                     System.out.println("ERROR");
                 } finally{
-                    previousExpression.setText(previousExpression.getText() + " = " + expression.getText() + " ... ");
+                    previousExpression.setText(expression.getText());
                 }
             }
         }
@@ -126,7 +127,7 @@ public class Interface extends Operations {
         botaoMemoria.addActionListener(new ClickNum());
         botaoSpace.addActionListener(new ClickNum());
         botaoApaga.addActionListener(new ClickNum());
-        botaoIgual.addActionListener(new ClickCalcula());
+        botaoCalcula.addActionListener(new ClickCalcula());
         
         painel.setLayout(new FlowLayout());
         for (int i = 0;i < 4;i ++)
@@ -134,9 +135,6 @@ public class Interface extends Operations {
             painel.add(espacosDeSeparacao[i]);
         }
         painel.add(expression);
-        //painel.add(espacosDeSeparacao[4]);
-        //painel.add(labelPreviousExpression);
-        //painel.add(previousExpression);
         painel.add(espacosDeSeparacao[5]);
         painel.add(botao1);
         painel.add(botao2);
@@ -161,7 +159,7 @@ public class Interface extends Operations {
         painel.add(botaoApaga);
         painel.add(botaoMemoria);
         painel.add(botaoSpace);
-        painel.add(botaoIgual);
+        painel.add(botaoCalcula);
         painel.add(espacosDeSeparacao[10]);
 
         frame.getContentPane().add(painel);
