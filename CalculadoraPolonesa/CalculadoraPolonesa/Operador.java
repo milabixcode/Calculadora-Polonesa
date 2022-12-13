@@ -4,6 +4,12 @@ abstract class Operador {
     abstract public ComplexNumber operar(ComplexNumber a, ComplexNumber b);
 }
 
+/*
+Aplicação do princípio de SOLID - Dependency inversion principle
+Criasse uma classe abstrata de operações e implementasse as classes concretas com responsabilidades únicas.
+Assim a calculadora executa a operação sem necessáriamente saber como ela é feita
+essa responsabilidade fica a cargo de cada classe concreta 
+*/
 class Soma extends Operador {
     @Override
     public ComplexNumber operar(ComplexNumber a, ComplexNumber b) {
