@@ -16,6 +16,13 @@ public class ComplexNumber {
         this.real = a;
         this.imaginaria = b;
     }
+    
+    /*
+    Getters e setters para o objeto. Acessos a campos do objeto devem sempre ser indiretos, ou seja 
+    nunca se deve acessar uma variável de um objeto de maneira direta, mas por meio de setters e getters 
+    assim: controlamos a forma de acesso, garantimos que qualquer logica de inserção ou recuperação de dados 
+    seja centralizada em um único ponto, evitamos efeitos colaterais
+    */
 
     public double getReal() {
         return real;
@@ -37,6 +44,12 @@ public class ComplexNumber {
     public String toString() {
         return "(" + this.real + ", " + this.imaginaria + "i)";
     }
+    
+    /*
+    Encapsulamento. Encapsulasse a lógica dentro do objeto para evitar efeitos colaterias e centralizar a lógica,
+    mantendo o principio da responsabilidade unica. Assim a classe sabe realizar as atividades matemáticas competentes a ela.
+    
+    */
 
     public ComplexNumber add(ComplexNumber other) {
         return new Soma().operar(this, other);
