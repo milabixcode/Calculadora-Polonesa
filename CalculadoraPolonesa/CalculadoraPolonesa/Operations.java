@@ -12,7 +12,7 @@ public class Operations {
         String nome = calculator.getClass().getName();
         System.out.println(nome);
 
-        System.out.println("Calculadora com notação Polonesa");
+        System.out.println("Reverse Polish Notation");
         System.out.println("------ Exemplo de uso: -------\n   4 7 + 1 * 5 8 * + ");
         System.out.print("Informe sua expressão:\n   ");
 

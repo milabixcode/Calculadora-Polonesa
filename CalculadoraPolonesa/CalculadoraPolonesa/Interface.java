@@ -7,19 +7,19 @@ import java.awt.event.*;
 public class Interface extends Operations {
   public Interface() {
 	JFrame frame = new JFrame("Calculadora Polonesa Reversa");  
-  frame.setResizable(false);
+        frame.setResizable(false);
         frame.setLocation(450, 120);
         frame.setSize(520,640);
         
         JPanel painel = new JPanel();
         painel.setBackground(Color.WHITE);
 
-        // Guarda a expressao que sera utilizada para o calculo
+        // Guarda a expressaão que é utilizada para os cálculos
         JLabel labelExpression = new JLabel("Expressão = ");
         JTextField expression = new JTextField(40);
         expression.setEditable(false);
 
-        // Guarda as expressoes calculadas anteriormente
+        // Guarda as expressões calculadas anteriormente
         JLabel labelPreviousExpression = new JLabel(" Memória  =  ");
         JTextField previousExpression = new JTextField(40);
         previousExpression.setEditable(false);

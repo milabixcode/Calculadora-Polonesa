@@ -6,7 +6,7 @@ abstract class Operador {
 
 /*
 Aplicação do princípio de SOLID - Dependency inversion principle
-Criasse uma classe abstrata de operações e implementasse as classes concretas com responsabilidades únicas.
+Cria-se uma classe abstrata de operações e implementa-se as classes concretas com responsabilidades únicas.
 Assim a calculadora executa a operação sem necessáriamente saber como ela é feita
 essa responsabilidade fica a cargo de cada classe concreta 
 */

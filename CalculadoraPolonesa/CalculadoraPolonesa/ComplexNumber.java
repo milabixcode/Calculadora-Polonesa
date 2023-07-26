@@ -46,7 +46,7 @@ public class ComplexNumber {
     }
     
     /*
-    Encapsulamento. Encapsulasse a lógica dentro do objeto para evitar efeitos colaterias e centralizar a lógica,
+    Encapsulamento. Encapsula-se a lógica dentro do objeto para evitar efeitos colaterais e centralizar a lógica,
     mantendo o principio da responsabilidade unica. Assim a classe sabe realizar as atividades matemáticas competentes a ela.
     
     */

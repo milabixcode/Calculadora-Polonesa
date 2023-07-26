@@ -16,8 +16,6 @@ public class Tests {
         check("3 2 +", "(5.0, 0.0i)");
         check("2 3 +", "(5.0, 0.0i)");
 
-        // javac CalculadoraPolonesa/*.java && java CalculadoraPolonesa.Tests
-
         check("3 2 -", "(1.0, 0.0i)");
         check("2 3 -", "(-1.0, 0.0i)");
 
@@ -46,3 +44,6 @@ public class Tests {
         }
     }
 }
+
+
+// javac CalculadoraPolonesa/*.java && java CalculadoraPolonesa.Tests
