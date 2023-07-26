@@ -4,8 +4,4 @@
 ### Serviços usados:
 * **Editor/IDE:** `Visual Studio Code`
 
-# POO
-# UFF_POO
-# UFF_POO
-# UFF_POO
-# UFF_POO
+
