@@ -7,13 +7,6 @@ import java.io.InputStreamReader;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        // Roda a minha calculadora
-        Interface calculator = new Interface();
-
-        // Mostra o nome da classe e em que pasta ela está
-        String nome = calculator.getClass().getName();
-        System.out.println(nome);
-
         System.out.println("Reverse Polish Notation");
         System.out.println("------ Exemplo de uso: -------\n   4 7 + 1 * 5 8 * + ");
         System.out.print("Informe sua expressão:\n   ");

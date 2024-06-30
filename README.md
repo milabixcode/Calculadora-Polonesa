@@ -1,5 +1,5 @@
-# OOP_Exercises
-## **Desafios Propostos na Disciplina de Programação Orientada a Objeto da UFF**
+# Calculadora Polonesa
+## **Desafio Proposto na Disciplina de Programação Orientada a Objeto da UFF**
 
 ## SUMÁRIO
 
@@ -20,15 +20,7 @@
 
 ## ``Introdução``
 
-O objetivo desse repositório é agrupar os desafios propostos durante a disciplina de Programação Orientada a Objeto. Os assuntos abordados são:
-• Fundamentos	da	programação	orientada	a	objetos	
-• Orientação	a	objetos	
-• Elementos	da	linguagem	Java	
-• Relacionamento	entre	objetos	
-• Herança	e	polimorfismo	
-• Classes	abstratas	e	interfaces	
-• Exceções	
-• Threads
+O projeto consiste de uma calculadora polonesa, ou calculadora com notação polonesa reversa (RPN, do inglês "Reverse Polish Notation"), que é um tipo de calculadora que utiliza uma forma diferente de notação para a introdução de dados e operações aritméticas. Na notação polonesa reversa, os operadores são colocados após os operandos, eliminando a necessidade de parênteses para definir a ordem das operações.
 
 ## ``Linguagem``
 

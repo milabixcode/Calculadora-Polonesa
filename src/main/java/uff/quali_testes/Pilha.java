@@ -13,6 +13,9 @@ public class Pilha {
     }
 
     public ComplexNumber numTopo() {
+        if (vazio()) {
+            return null;
+        }
         return topo.item;
     }
 
